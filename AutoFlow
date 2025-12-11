@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AutoFlow IA — Automatización para talleres mecánicos</title>
+  <meta name="description" content="Deja de perseguir clientes y recupera hasta 4 horas al día. AutoFlow IA automatiza citas, confirmaciones y recordatorios para talleres. Listo en 48–72h." />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --blue:#0B4F6C;
+      --orange:#FF8C42;
+      --green:#2BB673;
+      --gray-100:#F5F7FA;
+      --gray-500:#8A93A1;
+      --black:#0A0A0A;
+      --max-width:1100px;
+    }
+    /* Reset */
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;background:#fff;color:var(--black);-webkit-font-smoothing:antialiased;line-height:1.5}
+    a{color:inherit;text-decoration:none}
+
+    /* Container */
+    .wrap{max-width:var(--max-width);margin:28px auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+    .brand{display:flex;gap:12px;align-items:center}
+    .logo{width:46px;height:46px;border-radius:10px;background:linear-gradient(135deg,var(--blue),#0f6f8a);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-family:Montserrat}
+    .brand h1{font-size:18px;font-family:Montserrat;margin:0}
+    .nav{display:flex;gap:12px;align-items:center}
+    .btn-ghost{padding:8px 14px;border-radius:8px;border:1px solid var(--gray-100);background:transparent;color:var(--blue);font-weight:600}
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:12px}
+    .eyebrow{display:inline-block;background:linear-gradient(90deg,#E8F6FB,#FFF0E8);color:var(--blue);padding:6px 10px;border-radius:999px;font-weight:600;font-size:13px;margin-bottom:12px}
+    h2{font-family:Montserrat;font-size:34px;color:var(--black);line-height:1.02;margin-bottom:12px}
+    p.lead{color:var(--gray-500);margin-bottom:18px}
+    .cta-group{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+    .btn-primary{background:var(--orange);color:#fff;padding:14px 20px;border-radius:10px;font-weight:700;border:none;cursor:pointer;box-shadow:0 8px 24px rgba(255,140,66,0.18)}
+    .btn-secondary{background:transparent;border:2px solid var(--blue);color:var(--blue);padding:12px 18px;border-radius:10px;font-weight:700;cursor:pointer}
+    .subnote{font-size:13px;color:var(--gray-500)}
+    /* Mockup box */
+    .mockup{background:linear-gradient(180deg,#F9FDFF,#FFFFFF);border-radius:14px;padding:18px;box-shadow:0 10px 30px rgba(11,79,108,0.06)}
+    .phone{width:100%;height:360px;border-radius:10px;background:linear-gradient(180deg,#ffffff,#f2fbff);display:flex;flex-direction:column;overflow:hidden;border:1px solid #e9f2f7}
+    .phone .top{height:44px;background:linear-gradient(90deg,#fff,#f8fbff);display:flex;align-items:center;padding:10px 12px;gap:8px}
+    .bubble{background:var(--blue);color:#fff;padding:10px 14px;border-radius:14px;max-width:75%;font-size:14px}
+    .bubble.gray{background:#eef6f9;color:var(--black);align-self:flex-end}
+    /* Features */
+    .features{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:26px 0}
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 20px rgba(11,79,108,0.04);border:1px solid #f1f6f9}
+    .card h4{font-family:Montserrat;margin-bottom:8px;font-size:16px}
+    .card p{color:var(--gray-500);font-size:14px}
+    .checks{display:flex;flex-direction:column;gap:10px;margin-top:18px}
+    .check{display:flex;gap:8px;align-items:center;color:var(--gray-500)}
+    .check svg{flex-shrink:0}
+    /* How it works */
+    .how{display:flex;gap:18px;align-items:flex-start;margin:28px 0}
+    .steps{flex:1}
+    .step{display:flex;gap:14px;align-items:flex-start;margin-bottom:12px}
+    .step .num{width:44px;height:44px;border-radius:10px;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700}
+    .guarantee{background:#f9fffa;border-left:4px solid var(--green);padding:18px;border-radius:8px}
+    /* Pricing block */
+    .pricing{display:flex;gap:18px;align-items:stretch;margin:26px 0}
+    .price-card{flex:1;background:linear-gradient(180deg,#fff,#fff);padding:20px;border-radius:12px;border:1px solid #eef6f9;box-shadow:0 10px 30px rgba(11,79,108,0.04);display:flex;flex-direction:column;justify-content:space-between}
+    .price-big{font-family:Montserrat;font-size:28px;color:var(--black);margin-bottom:6px}
+    .price-note{color:var(--gray-500);font-size:14px;margin-bottom:10px}
+    /* contact form */
+    form{display:flex;flex-direction:column;gap:12px}
+    input,textarea,select{padding:12px;border-radius:10px;border:1px solid #e6eef4;font-size:15px}
+    .small{font-size:13px;color:var(--gray-500)}
+    footer{margin-top:30px;padding-top:16px;border-top:1px solid #f1f3f6;color:var(--gray-500);display:flex;justify-content:space-between;align-items:center}
+    /* Responsive */
+    @media (max-width:980px){
+      .hero{grid-template-columns:1fr;gap:18px}
+      .features{grid-template-columns:repeat(2,1fr)}
+      .mockup{order:2}
+    }
+    @media (max-width:640px){
+      .features{grid-template-columns:1fr}
+      .brand h1{font-size:16px}
+      h2{font-size:26px}
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">AF</div>
+        <div>
+          <h1>AutoFlow IA</h1>
+          <div class="small">Automatización para talleres</div>
+        </div>
+      </div>
+      <div class="nav">
+        <a class="btn-ghost" href="#how">Cómo funciona</a>
+        <a class="btn-ghost" href="#pricing">Precios</a>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <div>
+        <div class="eyebrow">Listo en 48–72 horas</div>
+        <h2>Deja de perseguir clientes y recupera hasta <span style="color:var(--orange)">4 horas al día</span></h2>
+        <p class="lead">Automatizamos las citas, confirmaciones y recordatorios para que tus clientes vengan a recoger su coche a tiempo — sin que tú tengas que llamar.</p>
+
+        <div class="cta-group" style="margin-bottom:14px">
+          <button class="btn-primary" onclick="scrollToForm()">Quiero automatizar mi taller</button>
+          <a class="btn-secondary" href="#how">Ver cómo funciona</a>
+        </div>
+        <div class="subnote">Ahorra tiempo, reduce retrasos y mejora la experiencia de tus clientes.</div>
+
+        <div style="margin-top:20px" class="checks">
+          <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2BB673" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Instalación en 48–72h</div>
+          <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2BB673" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Integración con WhatsApp</div>
+          <div class="check"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="#2BB673" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg> Ahorra hasta 4h/día</div>
+        </div>
+      </div>
+
+      <aside class="mockup">
+        <div class="phone" aria-hidden="true">
+          <div class="top">
+            <div style="width:10px;height:10px;border-radius:50%;background:#e3f2fb"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#e3f2fb"></div>
+            <div style="flex:1"></div>
+            <div style="width:10px;height:10px;border-radius:50%;background:#e3f2fb"></div>
+          </div>
+          <div style="padding:18px;display:flex;flex-direction:column;gap:12px">
+            <div class="bubble">Hola 👋 ¿Necesitás confirmar tu cita para revisión?</div>
+            <div class="bubble gray">Sí, mañana a las 11 está perfecto.</div>
+            <div class="bubble">Perfecto — te esperamos. Recordatorio enviado 48h antes.</div>
+            <div style="flex:1"></div>
+            <div style="font-size:12px;color:var(--gray-500)">AutoFlow IA · Agenda automática · Recordatorios</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="features">
+      <div class="card">
+        <h4>Agenda automática</h4>
+        <p>Los clientes piden turno y el sistema gestiona la disponibilidad sin intervención manual.</p>
+      </div>
+      <div class="card">
+        <h4>Confirmaciones inteligentes</h4>
+        <p>Mensajes automáticos con opciones rápidas (confirmar, cancelar, reprogramar).</p>
+      </div>
+      <div class="card">
+        <h4>Recordatorios de recogida</h4>
+        <p>Recordatorios previos para evitar coches ocupando espacio y clientes olvidadizos.</p>
+      </div>
+    </section>
+
+    <!-- HOW -->
+    <section id="how" class="how">
+      <div class="steps">
+        <h3 style="font-family:Montserrat;margin-bottom:10px">Cómo funciona</h3>
+        <div class="step">
+          <div class="num">1</div>
+          <div>
+            <div style="font-weight:600">Diagnóstico (10 min)</div>
+            <div class="small">Revisamos cómo gestionás hoy las citas y mensajes.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <div>
+            <div style="font-weight:600">Instalación (48–72h)</div>
+            <div class="small">Configuramos AutoFlow y lo integramos a tu WhatsApp y agenda.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <div>
+            <div style="font-weight:600">Ajustes y tests</div>
+            <div class="small">Probamos mensajes, confirmaciones y recordatorios con tu equipo.</div>
+          </div>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <div>
+            <div style="font-weight:600">Resultados</div>
+            <div class="small">En 7 días vas a notar menos llamadas y +2–4h libres por día.</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="width:360px">
+        <div class="guarantee">
+          <div style="font-weight:700;margin-bottom:6px">Garantía “Ahorro o Gratis”</div>
+          <div class="small">Si en 30 días no ahorrás mínimo 2 horas diarias, seguimos trabajando gratis hasta que lo logres.</div>
+        </div>
+        <div style="height:18px"></div>
+        <div style="font-size:13px;color:var(--gray-500)">
+          Trabajamos con talleres que atienden 4+ coches/día y usan WhatsApp. Si tu taller cumple, esta solución está diseñada para vos.
+        </div>
+      </div>
+    </section>
+
+    <!-- PRICING + FORM -->
+    <section id="pricing">
+      <h3 style="font-family:Montserrat;margin-bottom:12px">Planes</h3>
+      <div class="pricing">
+        <div class="price-card">
+          <div>
+            <div class="price-big">Starter — 297€/mes</div>
+            <div class="price-note">Para talleres pequeños (hasta 8 coches/día). Agenda automática + recordatorios básicos.</div>
+            <ul class="small" style="margin-left:14px">
+              <li>Instalación en 48–72h</li>
+              <li>Mensajes predefinidos</li>
+              <li>Soporte por 14 días</li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn-primary" onclick="scrollToForm()">Comenzar — 297€/mes</button>
+          </div>
+        </div>
+
+        <div class="price-card">
+          <div>
+            <div class="price-big">Pro — 497€/mes</div>
+            <div class="price-note">Para talleres con mayor volumen. Confirmaciones inteligentes + ajustes predictivos.</div>
+            <ul class="small" style="margin-left:14px">
+              <li>Prioridad en implementación</li>
+              <li>Mensajes personalizados</li>
+              <li>Soporte 30 días</li>
+            </ul>
+          </div>
+          <div>
+            <button class="btn-primary" onclick="scrollToForm()">Comenzar — 497€/mes</button>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:start;margin-top:20px">
+        <div>
+          <h4 style="font-family:Montserrat">¿Listo para dejar de perseguir clientes?</h4>
+          <p class="small">Completa el formulario y un especialista se contacta por WhatsApp en minutos para coordinar la demo e implementación.</p>
+          <ul class="small" style="margin-top:12px">
+            <li>Instalación en 48–72h</li>
+            <li>Garantía: Ahorro o Gratis</li>
+            <li>Soporte de onboarding</li>
+          </ul>
+        </div>
+
+        <!-- FORM -->
+        <aside>
+          <form id="leadForm">
+            <input type="text" id="name" placeholder="Nombre y apellido" required>
+            <input type="tel" id="phone" placeholder="WhatsApp (ej: +34 600 11 22 33)" required>
+            <input type="text" id="taller" placeholder="Nombre del taller" required>
+            <select id="plan">
+              <option value="starter">Starter — 297€/mes</option>
+              <option value="pro">Pro — 497€/mes</option>
+            </select>
+            <textarea id="notes" placeholder="¿Qué te consume más tiempo hoy?" rows="3"></textarea>
+            <div style="display:flex;gap:8px;align-items:center">
+              <button type="submit" class="btn-primary" style="flex:1">Solicitar demo por WhatsApp</button>
+            </div>
+            <div class="small" style="margin-top:8px">Al enviar, te contactamos por WhatsApp para coordinar la demo.</div>
+          </form>
+        </aside>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <strong>AutoFlow IA</strong> — Automatización para talleres</div>
+      <div class="small">Política de privacidad · Contacto</div>
+    </footer>
+  </div>
+
+  <script>
+    // === CONFIG: pon tu número en formato internacional sin signos ni espacios ===
+    const PHONE_NUMBER = "34600111222"; // EJEMPLO: España +34 600111222 -> 34600111222
+
+    function scrollToForm(){
+      const el = document.getElementById('leadForm');
+      if(el) el.scrollIntoView({behavior:'smooth', block:'center'});
+    }
+
+    // Form submit: valida y abre WhatsApp con mensaje prellenado
+    document.getElementById('leadForm').addEventListener('submit', function(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const taller = document.getElementById('taller').value.trim();
+      const plan = document.getElementById('plan').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      if(!name || !phone || !taller){
+        alert('Completa nombre, WhatsApp y nombre del taller.');
+        return;
+      }
+
+      // Mensaje para WhatsApp
+      const text = encodeURIComponent(
+        Nueva demo AutoFlow IA\nNombre: ${name}\nWhatsApp cliente: ${phone}\nTaller: ${taller}\nPlan interesado: ${plan}\nNotas: ${notes}
+      );
+      const waLink = https://wa.me/${PHONE_NUMBER}?text=${text};
+
+      // Abre WhatsApp en nueva pestaña
+      window.open(waLink, '_blank');
+
+      // Opcional: muestra confirmación en pantalla
+      alert('Gracias. Te vamos a escribir por WhatsApp en minutos para coordinar la demo.');
+      // reset
+      document.getElementById('leadForm').reset();
+    });
+  </script>
+</body>
+</html>
